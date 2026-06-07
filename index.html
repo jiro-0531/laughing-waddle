@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <title>作品一覧</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<script>
+const password = prompt("パスワードを入力してください");
+
+if (password !== "スッパゲッティーニ") {
+  document.body.innerHTML = "<h1>アクセスできません</h1>";
+  throw new Error("Unauthorized");
+}
+</script>
+
+<h1>作品一覧</h1>
+
+<h2>小説</h2>
+<ul>
+  <li><a href="novels/novel-a/index.html">小説A</a></li>
+  <li><a href="novels/novel-b/index.html">小説B</a></li>
+</ul>
+
+<h2>漫画</h2>
+<ul>
+  <li><a href="manga/manga-a/index.html">漫画A</a></li>
+</ul>
+
+<a href="zatta/index.html">雑多</a>
+
+</body>
+</html>
