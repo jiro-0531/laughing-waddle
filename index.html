@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -8,12 +8,14 @@
 </head>
 
 <body>
+
 <script>
 const password = prompt("パスワードを入力してください");
 
-if (password !== "スッパゲッティーニ") {
+if (password === "スッパゲッティーニ") {
+  // 正しいとき → 何もしない（＝普通にページ表示）
+} else {
   document.body.innerHTML = "<h1>アクセスできません</h1>";
-  throw new Error("Unauthorized");
 }
 </script>
 
