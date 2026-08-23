@@ -29,14 +29,19 @@
 </div>
 
 <script>
-const password = prompt("パスワードを入力してください");
-
-if (password === "スッパゲッティーニ") {
-  // 正しい → 表示する
+// すでにログイン済みならパスワードを聞かない
+if (localStorage.getItem("loggedIn") === "true") {
   document.getElementById("content").style.display = "block";
 } else {
-  // 間違い → 画面を完全に上書き
-  document.body.innerHTML = "<h1>アクセスできません</h1>";
+  const password = prompt("パスワードを入力してください");
+
+  if (password === "スッパゲッティーニ") {
+    // ログイン済みとして保存
+    localStorage.setItem("loggedIn", "true");
+    document.getElementById("content").style.display = "block";
+  } else {
+    document.body.innerHTML = "<h1>アクセスできません</h1>";
+  }
 }
 </script>
 
